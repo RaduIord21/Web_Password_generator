@@ -230,57 +230,47 @@
 
 
 <body>
-<div class="container text-center" id="title">
-    <h1 class="title_text">
-        This is the title
-    </h1>
-</div>
-<div class="container text-center forms">
-    <div class="row align-items-start">
-        <div class="col">
-            <form>
-                <label for="Min_letters">Least ammount of letters :</label><br>
-                <input type="text" id="min_l" name="Min_letters"><br>
-                <label for="Max_letters">Most ammount of letters :</label><br>
-                <input type="text" id="max_l" name="Max_letters">
-            </form>
-        </div>
-        <div class="col">
-            <form>
-                <label for="Min_numbers">Least ammount of numbers :</label><br>
-                <input type="text" id="min_n" name="Min_numbers"><br>
-                <label for="Max_numbers">Most ammount of numbers :</label><br>
-                <input type="text" id="max_n" name="Max_numbers">
-            </form>
-        </div>
-        <div class="col">
-            <form>
-                <label for="Min_special">Least ammount of specials :</label><br>
-                <input type="text" id="min_s" name="Min_special"><br>
-                <label for="Max_special">Most ammount of specials :</label><br>
-                <input type="text" id="max_s" name="Max_special">
-            </form>
-        </div>
+<div class="container text-center" >
+    <div id="title">
+        <h1 class="title_text">
+            This is the title
+        </h1>
     </div>
-</div>
-<br>
-<br>
-<div class="container text-center forms" id="final_form">
-    <div class="row align-items-start">
-        <div class="col">
-            <form>
-                <label for="Password_length">What is the password_length ?</label><br>
-                <input type="text" id="password_length" name="Password_length"><br>
-            </form>
-        </div>
+    <div class="card p-4">
+        <form action="/form" method="POST">
+            <div class="row align-items-start mb-5">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="Min_letters">Least ammount of letters :</label><br>
+                    <input type="text" id="min_l" name="Min_letters"><br>
+                    <label for="Max_letters">Most ammount of letters :</label><br>
+                    <input type="text" id="max_l" name="Max_letters">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="Min_numbers">Least ammount of numbers :</label><br>
+                    <input type="text" id="min_n" name="Min_numbers"><br>
+                    <label for="Max_numbers">Most ammount of numbers :</label><br>
+                    <input type="text" id="max_n" name="Max_numbers">
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <label for="Min_special">Least ammount of specials :</label><br>
+                    <input type="text" id="min_s" name="Min_special"><br>
+                    <label for="Max_special">Most ammount of specials :</label><br>
+                    <input type="text" id="max_s" name="Max_special">
+                </div>
+            </div>
+            <div class="row align-items-start mb-5">
+                <div class="col">
+                    <label for="Password_length">What is the password_length ?</label>
+                    <input type="text" id="password_length" name="Password_length">
+                </div>
+            </div>
+            <div class="row align-items-start">
+                <div class=" gap-2 col mx-auto">
+                    <button class="btn btn-primary" type="submit" formmethod="post">Generate Password</button>
+                </div>
+            </div>
+        </form>
     </div>
-</div>
-
-<br>
-<br>
-
-<div class="d-grid gap-2 col-6 mx-auto button">
-    <button class="btn" type="button">Generate Password</button>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
