@@ -1,0 +1,54 @@
+:root, [data-bs-theme=light],.btn-primary {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-btn-bg: #A5D7E8;
+}
+.inputs{
+    align-content: center;
+    float: right;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-image: url("pexels-dana-tentis-370799.jpg");
+    background-attachment : fixed;
+    background-color: royalblue;
+}
+
+.forms {
+    background-color: azure;
+    border-style: ridge;
+    border-width: medium;
+    border-color: black;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Adjust the height as needed */
+}
+
+#final_form{
+    display: flex;
+    justify-content: center;
+}
+
+.col {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the form elements vertically */
+    }
+
+.button{
+    background-color: azure;
+    border-style: ridge;
+    border-width: medium;
+    border-color: black;
+    border-radius: 10px;
+}
