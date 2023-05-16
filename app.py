@@ -22,11 +22,35 @@ def home():  # put application's code here
 
 
 @app.route('/form', methods=["GET", "POST"])
-def get_letters():
+def main():
     if request.method == "POST":
+        password = []
+        result = ""
         form_data = request.form
-        print(form_data)
-        return render_template("response.html", result=form_data)
+        min_letters = int(form_data["Min_letters"])
+        max_letters = int(form_data["Max_letters"])
+        min_numbers = int(form_data["Min_numbers"])
+        max_numbers = int(form_data["Max_numbers"])
+        min_specials = int(form_data["Min_special"])
+        max_specials = int(form_data["Max_special"])
+        password_length = int(form_data["Password_length"])
+        for each in range(min_letters):
+            sleep(0.01)
+            password.append(letters[lfsr() % no_letters])
+        for each in range(min_numbers):
+            sleep(0.01)
+            password.append(numbers[lfsr() % no_numbers])
+        for each in range(min_specials):
+            sleep(0.01)
+            password.append(special_characters[lfsr() % no_special_characters])
+        temp_len = len(password)
+        for each in range(password_length - temp_len):
+            sleep(0.01)
+            password.append(all_chars[lfsr() % len(all_chars)])
+        shuffle(password)
+        for each in password:
+            result += each
+        return render_template("response.html", result=result)
     return render_template("index.html")
 
 
