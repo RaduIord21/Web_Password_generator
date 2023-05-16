@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from .lfsr import lfsr, shuffle
+from lfsr import lfsr, shuffle
 from time import sleep
 
 
