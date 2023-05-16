@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from lfsr import lfsr, shuffle
+from .lfsr import lfsr, shuffle
 from time import sleep
 
 
@@ -42,7 +42,7 @@ def main():
 
         sum_minims = min_specials + min_numbers + min_letters
         sum_max = max_specials + max_numbers + max_letters
-        if sum_minims <= password_length <= sum_max:
+        if not (sum_minims <= password_length <= sum_max):
             error = "Invalid password length !!!"
         if min_letters > max_letters or min_numbers > max_numbers or min_specials > max_specials:
              error ="Invalid limits !!!"
