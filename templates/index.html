@@ -230,12 +230,17 @@
 
 
 <body>
-<div class="container text-center" >
+<div class="container text-center">
     <div id="title">
         <h1 class="title_text">
             Password generator
         </h1>
     </div>
+    {% if result %}
+    <div class="alert alert-danger" role="alert">
+        {{ result }}
+    </div>
+    {% endif %}
     <div class="card p-4">
         <form action="/form" method="POST">
             <div class="row align-items-start mb-5">

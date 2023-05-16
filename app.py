@@ -26,7 +26,11 @@ def main():
     if request.method == "POST":
         password = []
         result = ""
+        error = ""
         form_data = request.form
+        for each in ["Min_letters", "Max_letters", "Min_numbers","Max_numbers","Min_special","Max_special","Password_length"]:
+            if not form_data[each]:
+                return render_template("index.html", result="All fields must have values")
         min_letters = int(form_data["Min_letters"])
         max_letters = int(form_data["Max_letters"])
         min_numbers = int(form_data["Min_numbers"])
@@ -34,6 +38,17 @@ def main():
         min_specials = int(form_data["Min_special"])
         max_specials = int(form_data["Max_special"])
         password_length = int(form_data["Password_length"])
+
+
+        sum_minims = min_specials + min_numbers + min_letters
+        sum_max = max_specials + max_numbers + max_letters
+        if sum_minims <= password_length <= sum_max:
+            error = "Invalid password length !!!"
+        if min_letters > max_letters or min_numbers > max_numbers or min_specials > max_specials:
+             error ="Invalid limits !!!"
+        if error:
+            return render_template("index.html", result=error)
+
         for each in range(min_letters):
             sleep(0.01)
             password.append(letters[lfsr() % no_letters])
