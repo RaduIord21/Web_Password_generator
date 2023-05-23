@@ -29,7 +29,7 @@ def lfsr():  # vor fi alese pozitiile 1, 2, 4, 5 si 8
 
 def shuffle(lst):
     for each in range(len(lst)):
-        sleep(0.1)
+        sleep(0.01)
         index_to_swap = lfsr() % len(lst)
         aux = lst[index_to_swap]
         lst[index_to_swap] = lst[each]

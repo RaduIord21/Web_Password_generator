@@ -9,13 +9,17 @@
   </head>
   <body class="h-100">
 
-  <div class = "container d-flex text-center mx-auto h-100">
-      <div class ="card p-4 align-self-center w-100 ">
+  <div class = "container d-flex text-center mx-auto">
+      <div class ="card p-4 align-self-center w-100 m-5">
           <div class="card-header">
-              <h1 class="align-self-center">Your Password is :</h1>
+              <h1 class="align-self-center">Your Passwords are :</h1>
           </div>
           <div class ="card-body">
-              <h4 class="display-4">{{ result }}</h4>
+              <ol style="overflow: auto">
+                  {% for each in result %}
+                  <li>{{ each }}</li>
+                  {% endfor %}
+              </ol>
           </div>
       </div>
   </div>
