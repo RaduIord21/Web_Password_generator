@@ -44,7 +44,7 @@ def main():
         sum_max = max_specials + max_numbers + max_letters
         if not (sum_minims < password_length < sum_max):
             error = "Invalid password length !!!"
-        if min_letters >= max_letters or min_numbers >= max_numbers or min_specials >= max_specials:
+        if min_letters > max_letters or min_numbers > max_numbers or min_specials > max_specials:
             error = "Invalid limits !!!"
         if error:
             return render_template("index.html", result=error)
